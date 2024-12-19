@@ -1,0 +1,26 @@
+<form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Title</label>
+    <input id="title" formControlName="title" />
+    <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+      <div *ngIf="title?.errors?.['required']">
+        Title is required
+      </div>
+      <div *ngIf="title?.errors?.['pattern']">
+        Title must contain only letters or numbers
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="coverPicture">Cover Picture</label>
+    <input id="coverPicture" formControlName="coverPicture" />
+    <div *ngIf="coverPicture?.invalid && (coverPicture?.dirty || coverPicture?.touched)">
+      <div *ngIf="coverPicture?.errors?.['minlength']">
+        Minimum 5 characters
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="albumForm.invalid">Add Album</button>
+</form>

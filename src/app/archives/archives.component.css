@@ -1,0 +1,18 @@
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.album img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.album h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
